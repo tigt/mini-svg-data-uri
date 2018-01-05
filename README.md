@@ -1,22 +1,29 @@
 Mini SVG `data:` URI
 ====================
 
-This tool converts SVGs into the most compact, compressible `data:` URI that SVG-supporting browsers tolerate. The results look like this:
+This tool converts SVGs into the most compact, compressible `data:` URI that SVG-supporting browsers tolerate. The results look like this (169 bytes):
 
 ```url
-data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3e%3cpath d='M22 38V51L32 32l19-19v12C44 26 43 10 38 0 52 15 49 39 22 38z'/%3e%3c/svg%3e
+data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'
+%3e%3cpath d='M22 38V51L32 32l19-19v12C44 26 43 10 38 0 52 15 49 39 22 38z'/%3e
+%3c/svg%3e
 ```
 
-Compare to the Base64 version:
+Compare to the Base64 version (210 bytes):
 
 ```url
-data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZD0iTTIyIDM4VjUxTDMyIDMybDE5LTE5djEyQzQ0IDI2IDQzIDEwIDM4IDAgNTIgMTUgNDkgMzkgMjIgMzh6Ii8+PC9zdmc+
+data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIH
+ZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZD0iTTIyIDM4VjUxTDMyIDMybDE5LTE5djEyQzQ0IDI2ID
+QzIDEwIDM4IDAgNTIgMTUgNDkgMzkgMjIgMzh6Ii8+PC9zdmc+
 ```
 
-Or the URL-encoded version other tools produce:
+Or the URL-encoded version other tools produce (256 bytes):
 
 ```url
-data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2050%2050%22%3E%3Cpath%20d%3D%22M22%2038V51L32%2032l19-19v12C44%2026%2043%2010%2038%200%2052%2015%2049%2039%2022%2038z%22%2F%3E%3C%2Fsvg%3E
+data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%
+2F2000%2Fsvg%22%20viewBox%3D%220%200%2050%2050%22%3E%3Cpath%20d%3D%22M22%2038V51
+L32%2032l19-19v12C44%2026%2043%2010%2038%200%2052%2015%2049%2039%2022%2038z%22%2
+F%3E%3C%2Fsvg%3E
 ```
 
 For a more realistic example, I inlined the icons from the [Open Iconic](https://useiconic.com/open) project into CSS files with the 3 above methods:
@@ -41,6 +48,8 @@ var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="
 var optimizedSVGDataURI = svgToMiniDataURI(svg);
 // "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3e%3cpath d='M22 38V51L32 32l19-19v12C44 26 43 10 38 0 52 15 49 39 22 38z'/%3e%3c/svg%3e"
 ```
+
+You can also [try it in your browser at RunKit](https://npm.runkit.com/mini-svg-data-uri).
 
 ### Warning
 
