@@ -1,6 +1,6 @@
 {
   "name": "mini-svg-data-uri",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Small, efficient encoding of SVG data URIs for CSS, HTML, etc.",
   "main": "index.js",
   "repository": {
