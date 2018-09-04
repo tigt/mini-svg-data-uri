@@ -38,7 +38,7 @@ function specialHexEncode(match) {
 
 function svgToTinyDataUri(svgString) {
   if (typeof svgString !== 'string') {
-    throw new TypeError(`Expected a string, but received ${typeof svgString}`);
+    throw new TypeError('Expected a string, but received ' + typeof svgString);
   }
   // Strip the Byte-Order Mark if the SVG has one
   if (svgString.charCodeAt(0) === 0xfeff) { svgString = svgString.slice(1) }
