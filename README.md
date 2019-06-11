@@ -55,6 +55,16 @@ You can also [try it in your browser at RunKit](https://npm.runkit.com/mini-svg-
 
 * This **does not optimize the SVG source file**. You’ll want [svgo](https://github.com/svg/svgo) or its brother [SVGOMG](https://jakearchibald.github.io/svgomg/) for that.
 
+* The default output **does not work inside `srcset` attributes**. Use the `.toSrcset` method for that:
+
+  ```js
+  var srcsetExample = html`
+  <picture>
+    <source srcset="${svgToMiniDataURI.toSrcset(svg)}">
+    <img src="${svgToMiniDataURI(svg)}">
+  </picture>`;
+  ```
+
 * The resulting Data URI should be wrapped with double quotes: `url("…")`, `<img src="…">`, etc.
 
 * This might change or break SVGs that use `"` in character data, like inside `<text>` or `aria-label` or something. Try curly quotes (`“”`)  or `&quot;` instead.
