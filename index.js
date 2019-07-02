@@ -49,7 +49,7 @@ function svgToTinyDataUri(svgString) {
 }
 
 svgToTinyDataUri.toSrcset = function toSrcset(svgString) {
-  return this(svgString).replace(/ /g, '%20');
+  return svgToTinyDataUri(svgString).replace(/ /g, '%20');
 }
 
 module.exports = svgToTinyDataUri;
