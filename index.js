@@ -1,5 +1,5 @@
-const shorterNames = require('./shorter-css-color-names');
-const REGEX = {
+var shorterNames = require('./shorter-css-color-names');
+var REGEX = {
   whitespace: /\s+/g,
   urlHexPairs: /%[\dA-F]{2}/g,
   quotes: /"/g,
