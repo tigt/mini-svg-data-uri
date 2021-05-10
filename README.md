@@ -51,6 +51,17 @@ var optimizedSVGDataURI = svgToMiniDataURI(svg);
 
 You can also [try it in your browser at RunKit](https://npm.runkit.com/mini-svg-data-uri).
 
+### CLI
+
+If you have it installed globally, or as some kind of dependency inside your project’s directory:
+
+```sh
+mini-svg-to-data-uri file.svg # writes to stdout
+mini-svg-to-data-uri file.svg file.svg.uri # writes to the given output filename
+```
+
+Use `--help` for more info.
+
 ### Warning
 
 * This **does not optimize the SVG source file**. You’ll want [svgo](https://github.com/svg/svgo) or its brother [SVGOMG](https://jakearchibald.github.io/svgomg/) for that.
