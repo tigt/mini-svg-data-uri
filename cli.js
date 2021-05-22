@@ -37,5 +37,5 @@ fs.readFile(source, 'utf8', (err, data) => {
     process.exit(1);
   }
   const out = svgToMiniDataURI(data);
-  dest ? fs.writeFileSync(out) : console.log(out);
+  dest ? fs.writeFileSync(dest, out) : console.log(out);
 });
