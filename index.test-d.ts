@@ -1,5 +1,5 @@
 import svgToTinyDataUri from ".";
 
-svgToTinyDataUri('xx');
+svgToTinyDataUri('xx', 'utf-8');
 
 svgToTinyDataUri.toSrcset('xxx');
