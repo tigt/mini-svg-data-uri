@@ -36,7 +36,7 @@ function specialHexEncode(match) {
   }
 }
 
-function svgToTinyDataUri(svgString) {
+function svgToTinyDataUri(svgString, encoding='utf8') {
   if (typeof svgString !== 'string') {
     throw new TypeError('Expected a string, but received ' + typeof svgString);
   }
@@ -45,7 +45,7 @@ function svgToTinyDataUri(svgString) {
 
   var body = colorCodeToShorterNames(collapseWhitespace(svgString))
     .replace(REGEX.quotes, "'");
-  return 'data:image/svg+xml,' + dataURIPayload(body);
+  return `data:image/svg+xml;${encoding},` + dataURIPayload(body);
 }
 
 svgToTinyDataUri.toSrcset = function toSrcset(svgString) {
